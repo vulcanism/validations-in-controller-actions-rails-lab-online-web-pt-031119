@@ -10,10 +10,10 @@ class AuthorsController < ApplicationController
     @author = Author.new(author_params)
     if @author.valid?
       @author.save
+      redirect_to author_path(@author)
     else
       render :new
-
-    redirect_to author_path(@author)
+    end
   end
 
   private
